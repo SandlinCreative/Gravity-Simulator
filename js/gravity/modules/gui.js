@@ -176,7 +176,7 @@ define([
 
     var initVals = {
         'zoom': 1,
-        'massMult': 10,
+        'massMult': 30,
         'speed': 0.5,
         'orbit':3
     }
@@ -244,11 +244,20 @@ define([
 		var zoomInput = document.getElementById('menu-zoom');
         zoomInput.value = initVals.zoom;
 		render.changeZoom(zoomInput.value);
-		zoomInput.addEventListener('change', function () {
-			render.changeZoom(zoomInput.value);
+
+        zoomInput.addEventListener('change', function () {
+            render.changeZoom(zoomInput.value);
         });
 
+        //var zoomScroll = function (e) {
+        //    var zoomInput = document.getElementById('menu-zoom');
+        //    var delta = (e.deltaY > 0) ? 0.01 : -0.01;
 
+        //    var newZoom = zoomInput.value + delta;
+            
+        //    render.changeZoom(newZoom);
+        //};
+        //canvas.addEventListener('wheel', zoomScroll);
 
 		var speedInput = document.getElementById('menu-speed');
         speedInput.value = initVals.speed;

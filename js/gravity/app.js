@@ -14,7 +14,7 @@ define([
 	app.initialize = function(canvasId){
 		var canvas = document.getElementById(canvasId);
 		var ctx = canvas.getContext('2d');
-		var massMultiplier = 10;
+		var massMultiplier = 30;
 		
 		// Initialize the canvas utility, includes features such as autoresize
 		canvasUtil.initialize(canvas);

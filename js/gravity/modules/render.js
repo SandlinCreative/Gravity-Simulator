@@ -342,7 +342,8 @@ define(['jquery', 'underscore'], function($, _){
 
 	api.changeZoom = function (p_zoom) {
 	    camera.preferredZoom = parseFloat(p_zoom);
-	    camera.zoomIT = fps;
+        camera.zoomIT = fps;
+        console.log(p_zoom);
 	}
 	
 	api.setMouse = function(p_mouse){
