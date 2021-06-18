@@ -172,12 +172,20 @@ define([
 	*************/
 
 	var guiApi = {};
-	var menuCustomMass, menuShowGrid;
+    var menuCustomMass, menuShowGrid;
+
+    var initVals = {
+        'zoom': 0.5,
+        'massMult': 10,
+        'speed': 0.5,
+        'orbit':4
+    }
+
 	guiApi.initialize = function (p_spacetime, p_render, p_canvas, p_massMultiplier) {
 		spacetime = p_spacetime;
 		render = p_render;
 		canvas = p_canvas;
-		massMultiplier = p_massMultiplier;
+        massMultiplier = p_massMultiplier;
         
 		menuShowGrid = document.getElementById('menu-toggle-grid');
 		render.setDrawGrid(menuShowGrid.checked);
@@ -208,7 +216,7 @@ define([
 		}
 
 		var massMultiplierInput = document.getElementById('menu-mass-multiplier');
-		massMultiplierInput.value = 200;
+		massMultiplierInput.value = initVals.massMult;
 		massMultiplierInput.addEventListener('change', function () {
 			massMultiplier = massMultiplierInput.value;
 			render.updateMassMultiplier(massMultiplierInput.value);
@@ -216,8 +224,8 @@ define([
 		});
         
 		var orbitMassInput = document.getElementById('menu-orbit-mass');
-		orbitMassInput.value = 2;
-        orbitMass = 2;
+		orbitMassInput.value = initVals.orbit;
+        orbitMass = initVals.orbit;
 		orbitMassInput.addEventListener('change', function () {
 			orbitMass = orbitMassInput.value;
 			//render.updateOrbitMass(massMultiplierInput.value);
@@ -234,14 +242,14 @@ define([
 		});
 
 		var zoomInput = document.getElementById('menu-zoom');
-		zoomInput.value = 1;
+        zoomInput.value = initVals.zoom;
 		render.changeZoom(zoomInput.value);
 		zoomInput.addEventListener('change', function () {
 			render.changeZoom(zoomInput.value);
 		});
 
 		var speedInput = document.getElementById('menu-speed');
-		speedInput.value = 1;
+        speedInput.value = initVals.speed;
 		speedInput.addEventListener('change', function () {
 			spacetime.calculationSpeed(speedInput.value);
 		});
@@ -254,7 +262,7 @@ define([
 		var cyclefocusbtn = document.getElementById('menu-cycle-focus');
 		document.getElementById('menu-cycle-focus').onmousedown = function (e) {
 			spacetime.cycleFocus((e.which == 1) ? true : false);
-		};
+        };
 
 		canvas.onmousedown = function (e) {
 			if (e.which === 1) {
