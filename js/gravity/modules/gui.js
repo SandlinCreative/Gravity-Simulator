@@ -175,10 +175,10 @@ define([
     var menuCustomMass, menuShowGrid;
 
     var initVals = {
-        'zoom': 0.5,
+        'zoom': 1,
         'massMult': 10,
         'speed': 0.5,
-        'orbit':4
+        'orbit':3
     }
 
 	guiApi.initialize = function (p_spacetime, p_render, p_canvas, p_massMultiplier) {
@@ -246,7 +246,9 @@ define([
 		render.changeZoom(zoomInput.value);
 		zoomInput.addEventListener('change', function () {
 			render.changeZoom(zoomInput.value);
-		});
+        });
+
+
 
 		var speedInput = document.getElementById('menu-speed');
         speedInput.value = initVals.speed;
