@@ -200,8 +200,8 @@ define(['jquery', 'underscore'], function($, _){
 			);
 			
 			ctx.strokeStyle = "#666";
-			ctx.fillStyle = "#000";
-			if (object.cameraFocus === true) ctx.fillStyle = '#40A2BF';
+			ctx.fillStyle = "#eee";
+            if (object.cameraFocus === true) ctx.fillStyle = '#bf8740';
 			ctx.fill();
 		})();
 	}
@@ -293,7 +293,7 @@ define(['jquery', 'underscore'], function($, _){
 		centerCamera();
 
 		if (settings.showGrid === true) {
-			renderGrid(50, "#EEE");	
+            renderGrid(50, "#3c3c41");
 		};
 
 		for (var i = spacetime.length - 1; i >= 0; i--) {

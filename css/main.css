@@ -40,6 +40,14 @@ fieldset {
     padding: 0;
 }
 
+label {
+    color: #eee;
+}
+
+input{
+    color:#222;
+}
+
 textarea {
     resize: vertical;
 }
@@ -56,11 +64,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-#gravity{
+#gravity {
     width: 100vw;
     height: 100vh;
-
-    background-color: #FFF;
+    background-color: #242427;
 }
 
 .menu{

@@ -14,7 +14,7 @@ define([
 	app.initialize = function(canvasId){
 		var canvas = document.getElementById(canvasId);
 		var ctx = canvas.getContext('2d');
-		var massMultiplier = 200;
+		var massMultiplier = 60;
 		
 		// Initialize the canvas utility, includes features such as autoresize
 		canvasUtil.initialize(canvas);
@@ -123,7 +123,7 @@ define([
 			mass: starmass,
 			density: 0.0001,
 			path: []
-		});*/
+		});
 
 		/*for (var i = 0; i < 1000; i++) {
 			var radian = Math.random() * 2 * Math.PI;
